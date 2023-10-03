@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Hamburger from 'hamburger-react'
 import { useState } from 'react'
 
-
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false)
     return (
@@ -68,6 +67,7 @@ const Navbar = () => {
                         href="https://store.elevationchurch.org/"
                     >
                         <span>Store</span>
+                      
                         <svg
                             aria-hidden="true"
                             focusable="false"
