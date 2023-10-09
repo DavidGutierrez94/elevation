@@ -1,13 +1,29 @@
+import Link from 'next/link'
 import Hero from '../components/Hero'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    fas,
+    faCircleDollarToSlot,
+    faHeart,
+    faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 
+library.add(fab, fas, faCircleDollarToSlot, faHeart, faPaperPlane, faYoutube)
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-16  bg-black ">
-            <div className="mx-auto max-w-[1110px] sm:px-[15px] ">
-                <Hero />
+        <main className="flex min-h-screen flex-col items-center justify-between p-8 bg-black ">
+            <div className="container mx-auto w-screen max-w-[1110px]">
+                <div className="">
+                    <Hero />
+                </div>
             </div>
-            <div className="mx-auto flex w-screen max-w-[1110px] flex-row justify-between px-[15px] space-x-4">
-                <div className="max-w-xl">
+
+            <div className="mx-auto flex w-screen flex-wrap max-w-[1110px] flex-row justify-between px-[15px] space-x-4 pt-8">
+                <div className="max-w-xl mx-auto ">
                     <h3 className="font-mulish text-2xl font-extrabold leading-8 text-white">
                         Navigating Not Enough
                     </h3>
@@ -20,7 +36,7 @@ export default function Home() {
                         you in it, then He’s given you what you need.
                     </p>
                 </div>
-                <div className="hidden max-w-sm shrink-0 md:block">
+                <div className="max-w-sm mx-auto p-4">
                     <div className="flex w-full min-w-[250px] flex-col items-center justify-start space-y-4 rounded-md bg-[#1C1C1E] p-8">
                         <p className=" text-center text-[20px] font-extrabold leading-6 md:text-[14px] md:leading-4 text-white">
                             Want to take what you learned from this sermon to
@@ -35,6 +51,61 @@ export default function Home() {
                         </a>
                     </div>
                 </div>
+            </div>
+            <div className="mx-auto flex w-screen max-w-[1110px] flex-row items-center justify-between p-8">
+                <div className="flex h-full w-full flex-col items-center justify-end">
+                    <Link rel="icon" href={'/give'}>
+                        <FontAwesomeIcon
+                            className="text-white group-hover:item-hidden group-active:item-hidden"
+                            icon="circle-dollar-to-slot"
+                            size="lg"
+                        />
+                    </Link>
+                    <span className="text-white  text-[13px] text-extrabold capitalize group-hover:item-hidden group-active:item-hidden">
+                        give now
+                    </span>
+                </div>
+                <div className="flex h-full w-full flex-col items-center justify-end">
+                    <Link rel="icon" href={'/give'}>
+                        <FontAwesomeIcon
+                            className="text-white hover:opacity-100 active:opacity-100"
+                            icon={['fab', 'youtube']}
+                            size="lg"
+                        />
+                    </Link>
+                    <span className="text-white  text-[13px] text-extrabold capitalize group-hover:item-hidden group-active:item-hidden">
+                        youtube
+                    </span>
+                </div>
+                <div className="flex h-full w-full flex-col items-center justify-end">
+                    <Link rel="icon" href={'/give'}>
+                        <FontAwesomeIcon
+                            className="text-white  h-5 w-5 group-hover:item-hidden group-active:item-hidden"
+                            icon="heart"
+                            size="lg"
+                        />
+                    </Link>
+                    <span className="text-white  text-[13px] text-extrabold capitalize group-hover:item-hidden group-active:item-hidden">
+                        follow us
+                    </span>
+                </div>
+                <div className="flex h-full w-full flex-col items-center justify-end">
+                    <Link rel="icon" href={'/give'}>
+                        <FontAwesomeIcon
+                            className="text-white  mr-1 h-5 w-5 group-hover:item-hidden group-active:item-hidden"
+                            icon="paper-plane"
+                            size="lg"
+                        />
+                    </Link>
+                    <span className="text-white  text-[13px] text-extrabold capitalize  group-hover:item-hidden group-active:item-hidden">
+                        share
+                    </span>
+                </div>
+            </div>
+            <div className="max-w-xl justify-items-start">
+                <h3 className="font-mulish text-2xl font-extrabold leading-8 text-white text-left">
+                    Take your next step of fait
+                </h3>
             </div>
         </main>
     )

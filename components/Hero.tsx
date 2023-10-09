@@ -1,13 +1,17 @@
 'use client'
-import YouTube from 'react-youtube'
 
 const Hero = () => {
-    const opts = {
-        height: '680',
-        width: '1080',
-    }
     return (
-        <YouTube videoId="5DfYJP_osF0" opts={opts} className="w-full h-full" />
+        <div className="relative aspect-w-16 aspect-h-9">
+            <iframe
+                className=" w-full min-h-[240px] lg:h-[600px]"
+                title="YouTube Video"
+                src="https://www.youtube.com/embed/5DfYJP_osF0"
+                allowFullScreen
+                width={'100%'}
+                height={'100%'}
+            ></iframe>
+        </div>
     )
 }
 export default Hero
