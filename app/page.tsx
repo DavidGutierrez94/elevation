@@ -111,7 +111,7 @@ export default function Home() {
                 </h3>
             </div>
 
-            <div className="mx-auto flex  flex-nowrap w-screen max-w-[1110px] flex-row items-center justify-between p-8">
+            <div className="mx-auto flex overflow-x-auto flex-nowrap w-screen max-w-[1110px] flex-row items-center justify-between p-8">
                 <div className="flex columns-4 gap-4 w-full">
                     {ImageData.map(
                         (data: {
