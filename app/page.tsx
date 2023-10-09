@@ -11,18 +11,21 @@ import {
     faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { ImageData } from './Data/Data'
+import ImageCard from '@/components/ImageCard'
+import { Key } from 'react'
 
 library.add(fab, fas, faCircleDollarToSlot, faHeart, faPaperPlane, faYoutube)
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-8 bg-black ">
-            <div className="container mx-auto w-screen max-w-[1110px]">
-                <div className="">
+        <main className="flex min-h-screen flex-col items-center justify-between bg-black ">
+            <div className="container mx-auto w-screen max-w-[1110px] p-8">
+                <div>
                     <Hero />
                 </div>
             </div>
 
-            <div className="mx-auto flex w-screen flex-wrap max-w-[1110px] flex-row justify-between px-[15px] space-x-4 pt-8">
+            <div className="mx-auto flex w-screen flex-wrap max-w-[1110px] flex-row justify-between  pt-8">
                 <div className="max-w-xl mx-auto ">
                     <h3 className="font-mulish text-2xl font-extrabold leading-8 text-white">
                         Navigating Not Enough
@@ -36,7 +39,7 @@ export default function Home() {
                         you in it, then He’s given you what you need.
                     </p>
                 </div>
-                <div className="max-w-sm mx-auto p-4">
+                <div className="max-w-sm mx-auto">
                     <div className="flex w-full min-w-[250px] flex-col items-center justify-start space-y-4 rounded-md bg-[#1C1C1E] p-8">
                         <p className=" text-center text-[20px] font-extrabold leading-6 md:text-[14px] md:leading-4 text-white">
                             Want to take what you learned from this sermon to
@@ -102,10 +105,30 @@ export default function Home() {
                     </span>
                 </div>
             </div>
-            <div className="max-w-xl justify-items-start">
-                <h3 className="font-mulish text-2xl font-extrabold leading-8 text-white text-left">
+            <div className="relative w-7/12 h-8">
+                <h3 className="absolute left-0 text-2xl font-extrabold leading-8 text-white text-left">
                     Take your next step of fait
                 </h3>
+            </div>
+
+            <div className="mx-auto flex  flex-nowrap w-screen max-w-[1110px] flex-row items-center justify-between p-8">
+                <div className="flex columns-4 gap-4 w-full">
+                    {ImageData.map(
+                        (data: {
+                            id: Key | null | undefined
+                            imageSrc: string
+                            title: string
+                            subtitle: string
+                        }) => (
+                            <ImageCard
+                                key={data.id}
+                                imageSrc={data.imageSrc}
+                                title={data.title}
+                                subtitle={data.subtitle}
+                            />
+                        )
+                    )}
+                </div>
             </div>
         </main>
     )
